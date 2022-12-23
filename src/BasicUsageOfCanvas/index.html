@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic usage of canvas</title>
+  </head>
+  <body>
+    <canvas id="tutorial" width="150" height="150"></canvas>
+    <!-- 
+        キャンバスにブラウザが対応している為、canvasタグの中の要素が無視されキャンバスが描画されている。
+        つまり表示されない。
+     -->
+    <canvas id="stockGraph" width="150" height="150">
+      現在の株価: $3.15 + 0.15
+    </canvas>
+
+    <canvas id="clock" width="150" height="150">
+      <img src="./images/clock.png" width="150" height="150" alt="" />
+    </canvas>
+
+    <script>
+      var canvas = document.getElementById("tutorial");
+
+      if (canvas.getContext) {
+        console.log("キャンバスが対応してるぜ！");
+        var ctx = canvas.getContext("2d");
+        // 描画するコードをここに
+      } else {
+        // キャンバスに未対応の場合のコードをここに
+        console.log("キャンバスが未対応だぜ！");
+      }
+    </script>
+  </body>
+</html>
